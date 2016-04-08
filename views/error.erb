@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error</title>
+</head>
+<body>
+	<h1> <%= @error %> </h1>
+	<form action = "/" method="POST" id = "form">
+		<input type = "hidden" name = "error" value = "<%= @error %>" id = "error"> 
+		<input type = "hidden" name = "score" value = "<%= @score %>" id = "score"> 
+	</form>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

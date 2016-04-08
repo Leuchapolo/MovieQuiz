@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Michael's Movie Quiz</title>
+</head>
+<body>
+<center>
+<h1> Michael's Movie Quiz </h1>
+<h3> <em>Enter Search Term To Play:</em></h3>
+<% if @score != 0 %>
+	<p> Current Score is <%= @score %> </p>
+<% end %>
+<form action = "/play" method = "POST">
+<input type = "text" name = "term" placeholder= "Enter search term" size = "20">
+<button type = "submit">Play</button>
+</form>
+</center>
+</body>
+</html>

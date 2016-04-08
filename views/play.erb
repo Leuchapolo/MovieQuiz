@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+	<!-- loop through each picture and make a different tag for each where the source is set equal to play/ and onClick says try again. if the index is equal to the correct answer's index then make the source go home-->
+	<form action = "/" method = "POST" id = "continue">
+	<% @quiz.movies.each_with_index do |movie, index| %>
+		<% if index != @quiz.correct_answer %>
+			<a href = "/play">
+			 <img src = "<%= movie.poster %>" height = "80" width = "80" onClick = "alert('You suck, try again')">
+			  </a>
+		<% else %> 
+			
+			
+			<input type = "hidden" name = "score" id = "score">
+			 <img src = "<%= movie.poster %>" height = "80" width = "80" onClick = "getChoice(<%= @score %>)" style="cursor:pointer">
+
+			
+		<% end %>
+		<% if (index + 1) % 3 == 0 %> 
+			<br>
+		<%end%>
+	<% end %>
+	</form>
+	<h2> What movie <%= @quiz.question %>?</h2>
+	<script type="text/javascript" src="app.js"></script>
+	</center>
+</body>
+</html>
